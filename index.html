@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins' , sans-serif;
+
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+form{
+    background:rgb(35, 154, 90);
+    display: flex;
+    flex-direction: column;
+    padding: 2vw 4vw;
+    width: 100%;
+    margin-top:10% ;
+
+    max-width: 600px;
+    border-radius: 10px;
+
+}
+form h3 {
+    color: black;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-align: center
+
+}
+form input, form textarea{
+    border: 0;
+    margin: 10px 0;
+    padding: 20px;
+    outline: none;
+    background: #f5f5f5;
+    font-style: 16px;
+}
+form button{
+    padding: 15px;
+    background: #53ffb2;
+    color: #fff;
+    font-size: 18px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    width: 150px;
+    margin: 20px auto 0;
+    border-radius: 30px;
+}
+
+        </style>
+        
+        <meta name="viewport" content="width-device-width , initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Envoyer une facture par mail en format pdf </title>
+
+    </head>
+    <body>
+        <div class="container">
+            <form method="post" action="/sendemail" enctype="multipart/form-data">
+                <h3>FORMULAIRE ENVOIE FACTURE  </h3>
+                <input type="email"  name="email" placeholder="Votre Email" required>
+                <input type="text" name="objet" placeholder="Objet ">
+                <textarea name="message" rows="4" placeholder="Saisissez le détail facture "></textarea>
+                <input type="file" name='file' multiple accept="application/pdf"  id="facture"   required>
+                <button type="submit"  > Envoyer </button>
+            </form>
+
+        </div>
+        
+    </body>
+</html> 
